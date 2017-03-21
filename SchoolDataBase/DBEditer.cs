@@ -8,18 +8,11 @@ using System.Windows.Forms;
 
 namespace SchoolDataBase
 {
-    public partial class Main : Form
+    public partial class DBEditer : Form
     {
-        public Main()
+        public DBEditer()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            DBEditor DBViewer = new DBEditor();
-            DBViewer.Show();
-            this.Hide();
         }
     }
 }

@@ -106,6 +106,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Colors.txt" />
     <Content Include="ConnectionString.txt" />
     <Content Include="School.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
