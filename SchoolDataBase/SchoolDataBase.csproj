@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DBEditer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="DBEditer.Designer.cs">
+      <DependentUpon>DBEditer.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -65,8 +65,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SchoolDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="DBEditer.resx">
+      <DependentUpon>DBEditer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

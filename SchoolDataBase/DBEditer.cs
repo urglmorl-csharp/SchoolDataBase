@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace SchoolDataBase
 {
-    public partial class DBEditer : Form
+    public partial class DBEditor : Form
     {
-        public DBEditer()
+        public DBEditor()
         {
             InitializeComponent();
         }
