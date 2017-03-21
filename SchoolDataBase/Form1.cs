@@ -34,36 +34,50 @@ namespace SchoolDataBase
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string Table = comboBox1.SelectedItem.ToString();
 
-            OleDbDataAdapter DAdapter = new OleDbDataAdapter();
+            try
+            {
 
-            OleDbCommand com = new OleDbCommand("SELECT * FROM " + Table + ";");
-            com.Connection = con;
+                string Table = comboBox1.SelectedItem.ToString();
 
-            DAdapter.SelectCommand = com;
+                OleDbCommand com = new OleDbCommand("SELECT * FROM " + Table + ";", con);
 
-            con.Open();
-            com.ExecuteNonQuery();
-            DAdapter.Fill(DTable);
+                con.Open();
+                com.ExecuteNonQuery();
+                OleDbDataAdapter DAdapter = new OleDbDataAdapter(com);
+                DAdapter.Fill(DTable);
 
-            /**
-             * 
-             * Научить заполнять DataTable 
-             * 
-             **/
+                /**
+                 * 
+                 * Научить заполнять DataTable 
+                 * 
+                 **/
+/*
+                if (Table == "Pupils")
+                {
+                    DTable.Columns["id_pupil"].ColumnName = "ID";
+                    DTable.Columns["Surname"].ColumnName = "Фамилия";
+                    DTable.Columns["Name"].ColumnName = "Имя";
+                    DTable.Columns["Patronymic"].ColumnName = "Отчество";
+                    DTable.Columns["id_class"].ColumnName = "ID класса";
+                    DTable.Columns["id_parents"].ColumnName = "ID родителей";
 
-            if (Table == "Pupils") {
-                DTable.Columns["id_pupil"].ColumnName = "ID";
-                DTable.Columns["Surname"].ColumnName = "Фамилия";
-                DTable.Columns["Name"].ColumnName = "Имя";
-                DTable.Columns["Patronymic"].ColumnName = "Отчество";
-                DTable.Columns["id_class"].ColumnName = "ID класса";
-                DTable.Columns["id_parents"].ColumnName = "ID родителей";
+                    
+                }
+                if (Table == "Teachers")
+                {
+
+                }*/
+                
+                dataGridView1.DataSource = DTable;
+                con.Close();
+
             }
-            
-            dataGridView1.DataSource = DTable;
-            con.Close();
+            catch (Exception ex)
+            {
+                Errors.Add(ex.ToString());
+            }
+        
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
